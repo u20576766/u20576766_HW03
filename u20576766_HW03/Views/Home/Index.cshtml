@@ -1,0 +1,36 @@
+﻿@using u20576766_HW03.Models;
+@model IEnumerable<u20576766_HW03.Models.FileModel>
+@{
+    ViewBag.Title = "Home";
+}
+
+
+<div class="container-fluid order row">
+    <h1>MediaHost</h1>
+    <hr />
+    <br />
+    <br />
+    <div class="column">
+        <h3 class="card-title">Description</h3>
+        <p class="card-body card-text">
+            MediaHost is a cloud service that enables users to store files and applications on our remote servers and then access all the data via the Internet. You have a choice to upload your Document Files, Image Files and Video Files, all you have to do is select the right file type for the file to go to its designated storage repository.
+            After you have uploaded them, you can access them on the specific bar item where they will be stored. You can download and delete the file. You can also preview image and video files before you decide to delete or download them.
+            Learn more about our developer on the @Html.ActionLink("About Me", "AboutMe", "Home") page to better understand our website and developers. Who aim to give you the best experience they can.
+        </p>
+    </div>
+    <div class="columnTwo">
+        <h3 class="card-title">Upload Your Files</h3>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <br />
+            <label for="Documents"><input type="radio" name="FileType" value="Documents" /> Documents</label>
+            <br />
+            <label for="Images"><input type="radio" name="FileType" value="Images" /> Images</label>
+            <br />
+            <label for="Videos"><input type="radio" name="FileType" value="Videos" /> Videos</label>
+            <br />
+            <p><input type="file" id="files" name="files" /></p>
+            <p><input type="submit" value="UPLOAD" class="btn btn-primary" /></p>
+        }
+    </div>
+</div> 

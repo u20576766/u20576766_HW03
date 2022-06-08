@@ -1,0 +1,86 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color:white;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.tank:hover{
+    text-decoration: none;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*To my edits*/
+
+.order {
+    display: inline;
+}
+
+
+.btnUpload{
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+    font-size:large;
+    font-weight:bold;
+    font-family:'Arial Rounded MT';
+    
+}
+
+.space{
+    padding-bottom: 15px;
+}
+.imgSize {
+    width: 205cm;
+    height: 322cm;
+}
+.column {
+    float: left;
+    width: 65%;
+}
+
+.columnTwo {
+    float: right;
+    width: 30%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.btnDown{
+    background-color:green;
+    border:red;
+}
+
+.btnDelete{
+    background-color:red;
+    border:red;
+}
+
+.tableTop{
+    background-color:black;
+    color:white;
+}
+
+
+

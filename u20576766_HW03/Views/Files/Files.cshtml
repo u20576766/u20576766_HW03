@@ -1,0 +1,70 @@
+﻿@using u20576766_HW03.Models;
+@model IEnumerable<u20576766_HW03.Models.FileModel>
+@{
+    ViewBag.Title = "Files";
+}
+
+@{
+    var path = Server.MapPath("~/Media/Documents/");
+
+    if (Directory.GetFiles(path).Length == 0)
+    {
+        <div class="container">
+            <br />
+            <h1>Files</h1>
+            <hr />
+        </div>
+        <div class="justify-content-center noThing" style="text-align:center; position:center">
+            <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" style="width:256px; height:256px" />
+            <h4>There are no documents stored.</h4>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <br />
+            <h1>Files</h1>
+            <br />
+            <br />
+        </div>
+
+        <table class="table" id="vidTable">
+            <thead class="tableTop">
+                <tr>
+                    <td>File Name</td>
+                    <td>DOWNLOAD OPTION</td>
+                    <td>DELETE OPTION</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var FileModel in Model)
+                {
+                    <tr>
+                        <td>@FileModel.FileName</td>
+                        <td>
+                            @Html.ActionLink("DOWNLOAD", "DownloadFile", new { fileName = FileModel.FileName }, new { @class = "btn btn-primary btnDown" })
+                        </td>
+                        <td>
+                            <div name="Delete" onclick="deleteRow(r)" value="Delete">
+                                @Html.ActionLink("DELETE", "DeleteFile", new { fileName = FileModel.FileName }, new { @class = "btn btn-primary btnDelete" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <script>
+            function deleteRow(r) {
+                var i = r.parentNode.parentNode.rowIndex;
+                document.getElementById("vidTable").deleteRow(i);
+            };
+        </script>
+    }
+}
+
+
+
+
+
+
